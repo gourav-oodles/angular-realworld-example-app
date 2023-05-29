@@ -16,7 +16,7 @@ RUN npm run build
 
 # Stage 2: Serve the built app using Nginx
 FROM nginx:1.17-alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html/angular-conduit
 
 # Copy custom Nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
